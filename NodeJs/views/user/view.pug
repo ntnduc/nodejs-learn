@@ -1,0 +1,17 @@
+extend ../layout/comon
+
+block content
+
+    h1 View User 
+    table.table.table-striped
+        thead
+            tr
+                th(scope='col') Id
+                th(scope='col') Name
+                th(scope='col') Phone
+        tbody
+            tr
+                td= user.id 
+                td= user.name 
+                td= user.phone
+    

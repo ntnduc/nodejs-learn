@@ -1,0 +1,21 @@
+extend ../layout/comon
+
+block content
+
+    h1 Create 
+
+    if errors
+        each error in errors 
+            .alert.alert-danger= error
+
+    form(action="/user/create", method="POST") 
+        .mb-3.row
+            label.col-sm-2.col-form-label(for='name') Name
+            .col-sm-10
+                input#name.form-control(type='text', name="name", value = name)
+        .mb-3.row
+            label.col-sm-2.col-form-label(for='phone-number') Phone
+            .col-sm-10
+                input#name.form-control(type='phone', name="phone-number", value = phone)
+        .d-flex.justify-content-end
+            button.btn.btn-primary.mb-3 Create

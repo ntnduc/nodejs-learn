@@ -1,0 +1,29 @@
+extend ../layout/comon 
+
+block content
+    h1= "User"+ cookies
+
+    form.row.g-3(action="/user/search", method="GET")
+        .col-auto
+            input.form-control(type="text", name="q", value=q)
+        .col-auto
+            button.btn.btn-primary.mb-3 Search
+
+    table.table.table-striped
+        thead
+            tr
+                th(scope='col') #
+                th(scope='col') Name
+                th(scope='col') Phone
+                th(scope='col') Action
+        tbody
+            each user, index in users
+                    tr
+                        th(scope='name')= index
+                        td= user.name
+                        td= user.phone
+                        td
+                            a(href="/user/"+user.id) View
+
+
+    a(href="/user/create") Create 
